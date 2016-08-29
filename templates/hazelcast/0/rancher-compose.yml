@@ -4,7 +4,7 @@
   description: |
     Hazelcast Cluster with UI.
   minimum_rancher_version: v0.56.0
-  maintainer: "Pawan Kumar monu.pawan@gmail.com>"
+  maintainer: "<Pawan Kumar monu.pawan@gmail.com>"
   uuid: zk-0
   questions:
     - variable: "hz_scale"
