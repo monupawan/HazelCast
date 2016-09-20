@@ -3,6 +3,8 @@ Hazelcast-Mancenter-Loader:
   labels:
    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
   restart: always
+  volumes:
+   - /usr/local/aeris_lib/:/usr/local/aeris_lib
   ports:
    - 8888:8080
   command: bash /usr/local/aeris_lib/scripts/start-mancenter-loader.sh "Hazelcast-Mancenter-Loader" "hazelcast_Hazelcast-Loader" ${hz_scale}
@@ -16,6 +18,8 @@ Hazelcast-Loader:
   labels:
    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
   restart: always
+  volumes:
+   - /usr/local/aeris_lib/:/usr/local/aeris_lib
   command: bash /usr/local/aeris_lib/scripts/start-loader.sh "Hazelcast-Mancenter-Loader" "hazelcast_Hazelcast-Loader" ${hz_scale}
   links: 
    - Hazelcast-Mancenter-Loader:Hazelcast-Mancenter-Loader
