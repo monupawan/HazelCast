@@ -8,10 +8,10 @@
   uuid: zk-0
   questions:
     - variable: "hz_scale"
-      description: "Number of Hazelcast nodes."
-      label: "Hz Nodes:"
+      description: "Number of Hazelcast loader nodes(without mancenter)"
+      label: "Hz Loader Nodes(without mancenter):"
       required: true
-      default: 2
+      default: 1
       type: "int"
     - variable: "hz_init_frac"
       description: "CMS Initiating Occupancy Fraction"
@@ -37,3 +37,5 @@
       required: true
       default: 25 
       type: "string"
+Hazelcast-Loader:
+ scale: ${hz_scale}
