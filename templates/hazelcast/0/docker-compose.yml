@@ -7,7 +7,7 @@ Hazelcast-Mancenter-Loader:
    - /usr/local/aeris_lib/:/usr/local/aeris_lib
   ports:
    - 8888:8080
-  command: bash /usr/local/aeris_lib/scripts/start-mancenter-loader.sh "Hazelcast-Mancenter-Loader" "Hazelcast-Loader" ${hz_scale}
+  command: bash /usr/local/tomcat/bin/start-mancenter-loader.sh "Hazelcast-Mancenter-Loader" "Hazelcast-Loader" ${hz_scale}
   environment:
   - JVMFLAGS=-Xmx${hz_heap_size}g
   - INITOCFRACTION=${hz_init_frac}
@@ -20,7 +20,7 @@ Hazelcast-Loader:
   restart: always
   volumes:
    - /usr/local/aeris_lib/:/usr/local/aeris_lib
-  command: bash /usr/local/aeris_lib/scripts/start-loader.sh "Hazelcast-Mancenter-Loader" "Hazelcast-Loader" ${hz_scale}
+  command: bash /usr/local/tomcat/bin/start-loader.sh "Hazelcast-Mancenter-Loader" "Hazelcast-Loader" ${hz_scale}
   links: 
    - Hazelcast-Mancenter-Loader:Hazelcast-Mancenter-Loader
   labels: 
