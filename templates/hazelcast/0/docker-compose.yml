@@ -13,7 +13,7 @@ Hazelcast-Mancenter-Loader:
   - INITOCFRACTION=${hz_init_frac}
   - MAXHEAPFREERATIO=${hz_max_heap_free}
   - MINHEAPFREERATIO=${hz_min_heap_free}
-  - STACK_NAME=${stack_name}
+  - STACK_NAME=$${stack_name}
 Hazelcast-Loader:
   image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/nrt/hazlecast
   labels:
