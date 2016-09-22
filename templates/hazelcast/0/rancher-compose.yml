@@ -8,7 +8,7 @@
   uuid: zk-0
   questions:
     - variable: "hz_scale"
-      description: "Number of Hazelcast loader nodes(excluding mancenter)"
+      description: "Number of Hazelcast loader nodes(excluding mancenter node)"
       label: "Hz Loader Nodes(excluding mancenter):"
       required: true
       default: 1
