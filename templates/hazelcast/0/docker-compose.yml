@@ -1,4 +1,4 @@
-Hazelcast-Mancenter-Loader:
+Mancenter-Loader:
   image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/nrt/hazelcast
   labels:
    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
@@ -7,22 +7,22 @@ Hazelcast-Mancenter-Loader:
    - /usr/local/aeris_lib/:/usr/local/aeris_lib
   ports:
    - 8888:8080
-  command: bash /usr/local/tomcat/bin/start-mancenter-loader.sh "Hazelcast-Mancenter-Loader" "Hazelcast-Loader" ${hz_scale}
+  command: bash /usr/local/tomcat/bin/start-mancenter-loader.sh "Mancenter-Loader" "Loader" ${hz_scale}
   environment:
   - JVMFLAGS=-Xmx${hz_heap_size}g
   - INITOCFRACTION=${hz_init_frac}
   - MAXHEAPFREERATIO=${hz_max_heap_free}
   - MINHEAPFREERATIO=${hz_min_heap_free}
-Hazelcast-Loader:
+Loader:
   image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/nrt/hazelcast
   labels:
    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
   restart: always
   volumes:
    - /usr/local/aeris_lib/:/usr/local/aeris_lib
-  command: bash /usr/local/tomcat/bin/start-loader.sh "Hazelcast-Mancenter-Loader" "Hazelcast-Loader" ${hz_scale}
+  command: bash /usr/local/tomcat/bin/start-loader.sh "Mancenter-Loader" "Loader" ${hz_scale}
   links: 
-   - Hazelcast-Mancenter-Loader:Hazelcast-Mancenter-Loader
+   - Mancenter-Loader:Mancenter-Loader
   labels: 
     io.rancher.container.dns: true
     io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
