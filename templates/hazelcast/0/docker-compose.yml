@@ -21,6 +21,7 @@ Loader:
   volumes:
    - /usr/local/aeris_lib/resources/:/usr/local/aeris_lib/resources
    - /usr/local/aeris_lib/hazelcastETL/:/usr/local/aeris_lib/hazelcastETL
+   - /usr/local/aeris_lib/hazelcastNONETL/:/usr/local/aeris_lib/hazelcastNONETL
   command: bash /usr/local/tomcat/bin/start-loader.sh "Mancenter-Loader" "Loader" ${hz_scale}
   links: 
    - Mancenter-Loader:Mancenter-Loader
