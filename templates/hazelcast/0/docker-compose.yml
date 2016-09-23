@@ -4,7 +4,7 @@ Mancenter-Loader:
    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
   restart: always
   volumes:
-   - /usr/local/aeris_lib/:/usr/local/aeris_lib
+   - /usr/local/aeris_lib/resources/:/usr/local/aeris_lib/resources
   ports:
    - 8888:8080
   command: bash /usr/local/tomcat/bin/start-mancenter-loader.sh "Mancenter-Loader" "Loader" ${hz_scale}
@@ -19,7 +19,8 @@ Loader:
    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
   restart: always
   volumes:
-   - /usr/local/aeris_lib/:/usr/local/aeris_lib
+   - /usr/local/aeris_lib/resources/:/usr/local/aeris_lib/resources
+   - /usr/local/aeris_lib/hazelcastETL/:/usr/local/aeris_lib/hazelcastETL
   command: bash /usr/local/tomcat/bin/start-loader.sh "Mancenter-Loader" "Loader" ${hz_scale}
   links: 
    - Mancenter-Loader:Mancenter-Loader
