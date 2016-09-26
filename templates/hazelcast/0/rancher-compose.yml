@@ -37,13 +37,13 @@
       required: true
       default: 25 
       type: "string"
-     - variable: "cluster_type"
-       label: "HazelCast cluster type"
-       description: "HazelCast cluster type label"
-       required: true
-       type: enum   
-       options: 
-        - ETL
-        - NONETL
+    - variable: "cluster_type"
+      label: "HazelCast cluster type"
+      description: "HazelCast cluster type label"
+      required: true
+      type: enum   
+      options: 
+       - ETL
+       - NONETL
 Hazelcast-Loader:
  scale: ${hz_scale}
