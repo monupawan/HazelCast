@@ -40,6 +40,7 @@
      - variable: "cluster_type"
        label: "HazelCast cluster type"
        description: "HazelCast cluster type label"
+       required: true
        type: enum   
        options: 
         - ETL
