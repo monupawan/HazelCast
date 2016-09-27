@@ -45,5 +45,12 @@
       options: 
        - ETL
        - NONETL
+    - variable: "Cassandra_link"
+      description: |
+        Choose the Cassandra service to use. 
+      label: "Casandra stack/service"
+      default: "cass/cass"
+      required: true
+      type: "service"
 Hazelcast-Loader:
  scale: ${hz_scale}
