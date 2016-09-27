@@ -5,6 +5,8 @@ Mancenter-Loader:
   restart: always
   volumes:
    - /usr/local/aeris_lib/resources/:/usr/local/aeris_lib/resources
+   - /usr/local/aeris_lib/hazelcastETL/:/usr/local/aeris_lib/hazelcastETL
+   - /usr/local/aeris_lib/hazelcastNONETL/:/usr/local/aeris_lib/hazelcastNONETL
   ports:
    - 8888:8080
   command: bash /usr/local/tomcat/bin/start-mancenter-loader.sh "Mancenter-Loader" "Loader" ${hz_scale}
