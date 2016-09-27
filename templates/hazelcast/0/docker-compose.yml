@@ -14,6 +14,7 @@ Mancenter-Loader:
   - MAXHEAPFREERATIO=${hz_max_heap_free}
   - MINHEAPFREERATIO=${hz_min_heap_free}
   - CLUSTER_TYPE=${cluster_type}
+  - Cassandra_SERVICE=${Cassandra_link}
 Loader:
   image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/nrt/hazelcast
   labels:
@@ -36,3 +37,4 @@ Loader:
   - MAXHEAPFREERATIO=${hz_max_heap_free}
   - MINHEAPFREERATIO=${hz_min_heap_free}
   - CLUSTER_TYPE=${cluster_type}
+  - Cassandra_SERVICE=${Cassandra_link}
