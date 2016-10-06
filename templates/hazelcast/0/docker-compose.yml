@@ -1,5 +1,5 @@
 Mancenter-Loader:
-  image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/nrt/hazelcast:2
+  image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/nrt/hazelcast:3
   labels:
    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
   restart: always
@@ -18,7 +18,7 @@ Mancenter-Loader:
   - CLUSTER_TYPE=${cluster_type}
   - Cassandra_SERVICE=${Cassandra_link}
 Loader:
-  image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/nrt/hazelcast:2
+  image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/nrt/hazelcast:3
   labels:
    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
   restart: always
